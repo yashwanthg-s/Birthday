@@ -9,7 +9,7 @@ const PhotoGallery = () => {
 
   useEffect(() => {
     // Fetch photos from backend
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+    const API_URL = import.meta.env.VITE_API_URL || ''
     console.log('Fetching photos from /api/photos...')
     fetch('/api/photos')
       .then(res => {
@@ -18,12 +18,12 @@ const PhotoGallery = () => {
       })
       .then(data => {
         console.log('Photos received:', data)
-        // Convert relative URLs to absolute URLs pointing to backend
+        // Convert relative URLs to absolute URLs if API_URL is set
         const photosWithAbsoluteUrls = data.photos.map(photo => ({
           ...photo,
-          url: `${API_URL}${photo.url}`
+          url: API_URL ? `${API_URL}${photo.url}` : photo.url
         }))
-        console.log('Photos with absolute URLs:', photosWithAbsoluteUrls)
+        console.log('Photos with URLs:', photosWithAbsoluteUrls)
         setPhotos(photosWithAbsoluteUrls)
         setLoading(false)
       })

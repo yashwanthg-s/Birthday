@@ -8,7 +8,7 @@ const MusicPlayer = () => {
   const [hasInteracted, setHasInteracted] = useState(false)
   const audioRef = useRef(null)
   
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+  const API_URL = import.meta.env.VITE_API_URL || ''
 
   // Auto-play after user interaction
   useEffect(() => {
@@ -62,7 +62,7 @@ const MusicPlayer = () => {
       <audio
         ref={audioRef}
         loop
-        src={`${API_URL}/music/birthday-song.mp3`}
+        src={API_URL ? `${API_URL}/music/birthday-song.mp3` : '/music/birthday-song.mp3'}
         onEnded={() => setIsPlaying(false)}
         onError={(e) => console.error('Audio loading error:', e)}
       />
