@@ -8,39 +8,19 @@ const PhotoGallery = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Fetch photos from backend
-    const API_URL = import.meta.env.VITE_API_URL || ''
-    console.log('Fetching photos from /api/photos...')
-    fetch('/api/photos')
-      .then(res => {
-        console.log('Response status:', res.status)
-        return res.json()
-      })
-      .then(data => {
-        console.log('Photos received:', data)
-        // Convert relative URLs to absolute URLs if API_URL is set
-        const photosWithAbsoluteUrls = data.photos.map(photo => ({
-          ...photo,
-          url: API_URL ? `${API_URL}${photo.url}` : photo.url
-        }))
-        console.log('Photos with URLs:', photosWithAbsoluteUrls)
-        setPhotos(photosWithAbsoluteUrls)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error('Error fetching photos:', err)
-        console.log('Using fallback placeholder images')
-        // Fallback to placeholder images
-        setPhotos([
-          { id: 1, url: 'https://via.placeholder.com/400x400/FF6B9D/FFFFFF?text=Photo+1' },
-          { id: 2, url: 'https://via.placeholder.com/400x400/C06C84/FFFFFF?text=Photo+2' },
-          { id: 3, url: 'https://via.placeholder.com/400x400/6C5B7B/FFFFFF?text=Photo+3' },
-          { id: 4, url: 'https://via.placeholder.com/400x400/355C7D/FFFFFF?text=Photo+4' },
-          { id: 5, url: 'https://via.placeholder.com/400x400/F67280/FFFFFF?text=Photo+5' },
-          { id: 6, url: 'https://via.placeholder.com/400x400/F8B195/FFFFFF?text=Photo+6' },
-        ])
-        setLoading(false)
-      })
+    // Load photos directly from public folder (no backend needed)
+    const photos = [
+      { id: 1, url: '/photos/1.jpeg', filename: '1.jpeg' },
+      { id: 2, url: '/photos/2.jpeg', filename: '2.jpeg' },
+      { id: 3, url: '/photos/3.jpeg', filename: '3.jpeg' },
+      { id: 4, url: '/photos/4.jpeg', filename: '4.jpeg' },
+      { id: 5, url: '/photos/5.jpeg', filename: '5.jpeg' },
+      { id: 6, url: '/photos/6.jpeg', filename: '6.jpeg' },
+    ]
+    
+    console.log('Loading photos from public folder:', photos)
+    setPhotos(photos)
+    setLoading(false)
   }, [])
 
   return (
