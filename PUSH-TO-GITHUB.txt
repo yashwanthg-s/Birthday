@@ -1,0 +1,80 @@
+═══════════════════════════════════════════════════════════════
+🚀 PUSH TO GITHUB REPOSITORY
+═══════════════════════════════════════════════════════════════
+
+Repository: https://github.com/yashwanth-g-s/birthday
+
+═══════════════════════════════════════════════════════════════
+COMMANDS TO RUN (Copy and paste these in Command Prompt)
+═══════════════════════════════════════════════════════════════
+
+# Navigate to your project folder
+cd D:\subhash
+
+# Initialize Git (if not already done)
+git init
+
+# Add all files
+git add .
+
+# Commit all files
+git commit -m "Birthday website for Subhash Bhai - Initial commit"
+
+# Add the remote repository
+git remote add origin https://github.com/yashwanth-g-s/birthday.git
+
+# Rename branch to main (if needed)
+git branch -M main
+
+# Push to GitHub
+git push -u origin main
+
+═══════════════════════════════════════════════════════════════
+IF YOU GET AN ERROR ABOUT EXISTING REMOTE
+═══════════════════════════════════════════════════════════════
+
+# Remove existing remote
+git remote remove origin
+
+# Add the correct remote
+git remote add origin https://github.com/yashwanth-g-s/birthday.git
+
+# Push again
+git push -u origin main
+
+═══════════════════════════════════════════════════════════════
+IF YOU GET AUTHENTICATION ERROR
+═══════════════════════════════════════════════════════════════
+
+You'll need to authenticate with GitHub:
+
+Option 1: Use GitHub Desktop
+- Download from: https://desktop.github.com
+- Sign in with your GitHub account
+- Add the repository
+- Push from GitHub Desktop
+
+Option 2: Use Personal Access Token
+1. Go to: https://github.com/settings/tokens
+2. Click "Generate new token (classic)"
+3. Give it a name: "Birthday Website"
+4. Select scopes: repo (all)
+5. Generate token and COPY IT
+6. When pushing, use token as password
+
+═══════════════════════════════════════════════════════════════
+VERIFY IT WORKED
+═══════════════════════════════════════════════════════════════
+
+After pushing, go to:
+https://github.com/yashwanth-g-s/birthday
+
+You should see all your files there! ✅
+
+═══════════════════════════════════════════════════════════════
+NEXT: DEPLOY TO RAILWAY & VERCEL
+═══════════════════════════════════════════════════════════════
+
+Once pushed to GitHub, follow: COMMANDS-TO-RUN.txt
+
+═══════════════════════════════════════════════════════════════
