@@ -17,7 +17,7 @@ function App() {
   const personalDetails = {
     name: "Subhash Bhai", // ⬅️ CHANGE THIS
     age: 21, // ⬅️ CHANGE THIS
-    birthday: "2026-05-05T00:00:00", // ⬅️ TODAY AT MIDNIGHT (12:00 AM)! 🎉
+    birthday: "2027-05-05T00:00:00", // ⬅️ TODAY AT MIDNIGHT (12:00 AM)! 🎉
     message: "You were my childhood friend, but today you are my brother by heart. Life gave me many people, but it gave me you as family ❤️ Happy Birthday!"
   }
 
